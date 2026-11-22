@@ -1,0 +1,133 @@
+{
+  "track": "nlp",
+  "model": "google-bert/bert-base-cased",
+  "revision": "cd5ef92a9fb2f889e972770a36d4ed042daf221e",
+  "dataset": "eriktks/conll2003",
+  "classes": [
+    "LOC",
+    "MISC",
+    "ORG",
+    "PER"
+  ],
+  "n_train": 14041,
+  "n_val": 3250,
+  "n_test": 3453,
+  "params_total": 107726601,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.6536467334946422,
+      "f1_macro": 0.6522744828017976,
+      "precision": 0.6717584369449379,
+      "recall": 0.6364860316391787
+    },
+    "random_head": {
+      "f1_micro": 0.03563132259273136,
+      "f1_macro": 0.03694412578979139,
+      "precision": 0.02004721952864792,
+      "recall": 0.1600471221810838
+    }
+  },
+  "final": {
+    "f1_micro": 0.9106061935257479,
+    "f1_macro": 0.8958174970789718,
+    "precision": 0.9024517475221701,
+    "recall": 0.9189093484419264,
+    "token_f1": 0.9222873900293255,
+    "per_type": {
+      "LOC": {
+        "precision": 0.9274673008323424,
+        "recall": 0.935251798561151,
+        "f1-score": 0.9313432835820895,
+        "support": 1668.0
+      },
+      "MISC": {
+        "precision": 0.7755644090305445,
+        "recall": 0.8319088319088319,
+        "f1-score": 0.8027491408934708,
+        "support": 702.0
+      },
+      "ORG": {
+        "precision": 0.8785211267605634,
+        "recall": 0.901264298615292,
+        "f1-score": 0.8897473997028231,
+        "support": 1661.0
+      },
+      "PER": {
+        "precision": 0.9609181141439206,
+        "recall": 0.9579468150896723,
+        "f1-score": 0.9594301641375038,
+        "support": 1617.0
+      }
+    },
+    "validation": {
+      "f1_micro": 0.9473155205628613,
+      "f1_macro": 0.93894720960582,
+      "precision": 0.9429714857428715,
+      "recall": 0.9516997643890945,
+      "token_f1": 0.9568499912886927,
+      "per_type": {
+        "LOC": {
+          "precision": 0.9725576289791438,
+          "recall": 0.9646162221012521,
+          "f1-score": 0.9685706477179556,
+          "support": 1837.0
+        },
+        "MISC": {
+          "precision": 0.8699690402476781,
+          "recall": 0.9143167028199566,
+          "f1-score": 0.8915917503966156,
+          "support": 922.0
+        },
+        "ORG": {
+          "precision": 0.9162380602498164,
+          "recall": 0.9299030574198359,
+          "f1-score": 0.9230199851961509,
+          "support": 1341.0
+        },
+        "PER": {
+          "precision": 0.9718157181571816,
+          "recall": 0.9733984799131379,
+          "f1-score": 0.9726064551125577,
+          "support": 1842.0
+        }
+      }
+    },
+    "baseline_majority_token_f1_val": 0.7074579831932774
+  },
+  "ablation": {
+    "setting": "freeze",
+    "split": "validation",
+    "lr": 3e-05,
+    "epochs": 3,
+    "full": {
+      "f1_micro": 0.9473155205628613,
+      "f1_macro": 0.93894720960582,
+      "precision": 0.9429714857428715,
+      "recall": 0.9516997643890945,
+      "token_f1": 0.9568499912886927,
+      "train_sec": 178.57314249999945,
+      "trainable_params": 107726601,
+      "eval_loss": 0.034157514572143555
+    },
+    "freeze": {
+      "f1_micro": 0.0010015022533800702,
+      "f1_macro": 0.0007957559681697613,
+      "precision": 0.061224489795918366,
+      "recall": 0.0005048805116122518,
+      "token_f1": 0.005547209060441465,
+      "train_sec": 88.1859302999992,
+      "trainable_params": 6921,
+      "eval_loss": 0.709388017654419
+    }
+  },
+  "errors": {
+    "correct": 5655,
+    "boundary": 79,
+    "type": 161,
+    "missed": 47,
+    "spurious": 70
+  },
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "train_time_sec": 178.57314249999945,
+  "fast_mode": false
+}

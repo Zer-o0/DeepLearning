@@ -4,3 +4,5 @@ data/
 __pycache__/
 .ipynb_checkpoints/
 Screenshot*.png
+runs/
+runs_hw2/
